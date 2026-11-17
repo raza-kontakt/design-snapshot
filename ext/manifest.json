@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Design Snapshot",
+  "version": "1.0.0",
+  "description": "Capture a page or element's HTML structure, CSS, tokens, components, animations and data-fetching into one Markdown file for AI agents.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": { "default_popup": "popup.html", "default_title": "Design Snapshot" },
+  "content_scripts": [
+    { "matches": ["<all_urls>"], "js": ["hook.js"], "run_at": "document_start", "world": "MAIN", "all_frames": false }
+  ]
+}
